@@ -1,0 +1,36 @@
+<header
+  class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
+>
+  <!-- Background Image -->
+  <!-- The background image is set here. Replace the URL with your own image. -->
+  <div
+    class="absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center"
+    style="background-image: url('src/assets/street-parking.jpg');"
+  >
+  </div>
+
+  <!-- Black Overlay -->
+  <!-- This creates a dark overlay so the white text is more readable. Adjust opacity as needed. -->
+  <div class="absolute top-0 right-0 bottom-0 left-0 bg-black opacity-50"></div>
+
+  <!-- Centered Content -->
+  <!-- The 'relative' class ensures this content appears on top of the background and overlay. -->
+  <div class="relative z-10 p-4">
+    <h1
+      class="text-5xl md:text-7xl lg:text-8xl text-white font-black tracking-tighter"
+    >
+      Better Parking for Boston
+    </h1>
+    <p class="text-lg md:text-xl text-gray-200 mt-4 max-w-2xl mx-auto">
+      A catchy and inspiring tagline about what your site has to offer.
+    </p>
+    <div class="mt-8">
+      <a
+        href="#content"
+        class="bg-white text-gray-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition duration-300 ease-in-out"
+      >
+        Get Started
+      </a>
+    </div>
+  </div>
+</header>
