@@ -153,16 +153,20 @@
   /* This is the 'hover' state.
       When the PARENT (.animated-card-container) is hovered...
       ...these styles apply to the child emoji elements.
-    */
-  .emoji-animation-container:hover .emoji-left {
-    opacity: 1;
-    left: -20%; /* Move it outside the card to the left */
-    transform: translate(-50%, -50%) rotate(-15deg); /* Add a tilt */
-  }
 
-  .emoji-animation-container:hover .emoji-right {
-    opacity: 1;
-    right: -20%; /* Move it outside the card to the right */
-    transform: translate(50%, -50%) rotate(15deg); /* Add a tilt */
+      Also, only apply this on screens 768px wide and larger, to prevent issues on small screens.
+    */
+  @media (min-width: 768px) {
+    .emoji-animation-container:hover .emoji-left {
+      opacity: 1;
+      left: -20%; /* Move it outside the card to the left */
+      transform: translate(-50%, -50%) rotate(-15deg); /* Add a tilt */
+    }
+
+    .emoji-animation-container:hover .emoji-right {
+      opacity: 1;
+      right: -20%; /* Move it outside the card to the right */
+      transform: translate(50%, -50%) rotate(15deg); /* Add a tilt */
+    }
   }
 </style>
