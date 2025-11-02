@@ -1,3 +1,7 @@
+---
+import heroImage from "../assets/street-parking.jpg";
+---
+
 <header
   class="relative h-screen w-full flex items-center justify-center text-center overflow-hidden"
 >
@@ -5,7 +9,7 @@
   <!-- The background image is set here. Replace the URL with your own image. -->
   <div
     class="absolute top-0 right-0 bottom-0 left-0 bg-cover bg-center"
-    style="background-image: url('src/assets/street-parking.jpg');"
+    style={`background-image: url(${heroImage.src});`}
   >
   </div>
 
@@ -27,7 +31,7 @@
     </p>
     <div class="mt-8 mx-10 flex justify-center gap-4">
       <a
-        href="#content"
+        href="#problem"
         class="bg-white text-gray-900 font-bold py-3 px-8 rounded-lg text-lg hover:bg-gray-200 transition duration-300 ease-in-out"
       >
         Learn More
