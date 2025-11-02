@@ -6,39 +6,163 @@
 
     <div class="flex flex-col gap-8 max-w-3xl mx-auto">
       <!-- Benefit 1 -->
-      <div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+      <div
+        class="emoji-animation-container bg-gray-50 p-8 rounded-lg shadow-sm text-center
+      transition-all duration-300 hover:ring-4 hover:ring-blue-500 hover:ring-opacity-75"
+      >
         <h3 class="text-2xl font-bold mb-3 text-gray-900">
           More Affordable Housing
         </h3>
         <p class="text-gray-600">
-          By removing expensive parking mandates, we can lower the cost of
-          building new homes, making Boston more affordable for everyone.
+          "From an affordability and access perspective, larger parking minimums
+          force buyers and renters to pay for parking spaces they may not want
+          or need, which could cause would-be buyers and renters to be unable to
+          afford to live in a particular area. Parking mandates can also
+          decrease the number of housing units in a development, thereby
+          reducing access through fewer units."
         </p>
+        <footer class="mt-3 text-sm text-gray-500">
+          — <a
+            href="https://www.housingaffordabilityinstitute.org/policy-center/parking-mandates/"
+            class="underline hover:text-gray-700"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Housing Affordability Institute, "Affordability Roadblocks - Parking
+            Mandates"
+          </a>
+        </footer>
+        <span class="emoji-particle emoji-left">💰</span>
+        <span class="emoji-particle emoji-right">📉</span>
       </div>
 
       <!-- Benefit 2 -->
-      <div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+      <div
+        class="emoji-animation-container bg-gray-50 p-8 rounded-lg shadow-sm text-center
+        transition-all duration-300 hover:ring-4 hover:ring-indigo-500 hover:ring-opacity-75"
+      >
         <h3 class="text-2xl font-bold mb-3 text-gray-900">
           Vibrant, Walkable Neighborhoods
         </h3>
         <p class="text-gray-600">
-          Less space for cars means more space for people. We can build more
-          walkable main streets with thriving small businesses and a stronger
-          sense of community.
+          "In Amsterdam, some street parking has become urban forest; in Paris,
+          entire blocks outside schools have been repurposed as social spaces
+          for kids. All that is possible in U.S. cities too. But first leaders
+          must legalize the type of parking-lite, high-density housing that
+          makes it possible for a neighborhood to be vibrant, walkable, and
+          economically served by mass transit."
         </p>
+        <footer class="mt-3 text-sm text-gray-500">
+          — <a
+            href="https://e360.yale.edu/features/free-parking-reform"
+            class="underline hover:text-gray-700"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Henry Grabar, "How Parking Reform Is Helping Transform American
+            Cities"
+          </a>
+        </footer>
+        <span class="emoji-particle emoji-left">🚶‍➡️</span>
+        <span class="emoji-particle emoji-right">🏙️</span>
       </div>
 
       <!-- Benefit 3 -->
-      <div class="bg-gray-50 p-8 rounded-lg shadow-sm text-center">
+      <div
+        class="emoji-animation-container bg-gray-50 p-8 rounded-lg shadow-sm text-center
+        transition-all duration-300 hover:ring-4 hover:ring-green-500 hover:ring-opacity-75"
+      >
         <h3 class="text-2xl font-bold mb-3 text-gray-900">
           A Greener, Healthier City
         </h3>
+
         <p class="text-gray-600">
-          Replacing concrete parking lots with green space reduces heat,
-          improves air quality, and creates a more beautiful and resilient city.
+          "Reducing the amount of parking in urban spaces can also greatly
+          improve the quality of urban landscapes... lower automobile use per
+          capita helps to reduce greenhouse gas emissions and pollution from
+          cars around population centers. Additionally, decreasing the amount of
+          built infrastructure like parking and roads can reduce the heat island
+          effect."
         </p>
+        <footer class="mt-3 text-sm text-gray-500">
+          — <a
+            href="https://www.eesi.org/articles/view/how-eliminating-parking-minimums-actually-makes-cities-better"
+            class="underline hover:text-gray-700"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            EESI, "How Eliminating Parking Minimums Actually Makes Cities
+            Better"
+          </a>
+        </footer>
+
+        <!-- The Emojis! They are hidden by default via CSS -->
+        <span class="emoji-particle emoji-left">🌳</span>
+        <span class="emoji-particle emoji-right">🏃‍♀️</span>
+        <!-- Added a different runner emoji for variety -->
       </div>
     </div>
     <div class="border-b border-gray-200 max-w-3xl mx-auto mt-16"></div>
   </div>
 </section>
+
+<style>
+  /* This is the custom CSS for the emoji animation.
+      It's placed here in the <head> tag.
+    */
+
+  /* 1. The container needs 'position: relative' so we can
+         position the emojis inside it.
+      2. 'overflow: visible' is CRITICAL so the emojis
+         can be seen when they move *outside* the card's box.
+    */
+  .emoji-animation-container {
+    position: relative;
+    overflow: visible;
+    z-index: 10; /* Ensures emojis appear 'above' other cards */
+  }
+
+  /* 1. 'position: absolute' takes the emoji out of the normal flow.
+      2. 'opacity: 0' makes it invisible by default.
+      3. 'transition' animates the changes to opacity and position.
+      4. 'pointer-events: none' is important so the emoji doesn't
+         block your mouse from hovering on the card itself.
+    */
+  .emoji-particle {
+    position: absolute;
+    font-size: 2rem; /* Made emojis a bit bigger */
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* A 'bouncy' ease */
+  }
+
+  /* Positioning for the tree emoji */
+  .emoji-left {
+    top: 50%;
+    left: 10%; /* Start slightly inside */
+    transform: translate(-50%, -50%);
+  }
+
+  /* Positioning for the runner emoji */
+  .emoji-right {
+    top: 50%;
+    right: 10%; /* Start slightly inside */
+    transform: translate(50%, -50%);
+  }
+
+  /* This is the 'hover' state.
+      When the PARENT (.animated-card-container) is hovered...
+      ...these styles apply to the child emoji elements.
+    */
+  .emoji-animation-container:hover .emoji-left {
+    opacity: 1;
+    left: -20%; /* Move it outside the card to the left */
+    transform: translate(-50%, -50%) rotate(-15deg); /* Add a tilt */
+  }
+
+  .emoji-animation-container:hover .emoji-right {
+    opacity: 1;
+    right: -20%; /* Move it outside the card to the right */
+    transform: translate(50%, -50%) rotate(15deg); /* Add a tilt */
+  }
+</style>
