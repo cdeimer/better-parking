@@ -1,0 +1,25 @@
+---
+interface Props {
+  announcementDate?: string;
+  announcementMessage?: string;
+}
+
+const { announcementDate, announcementMessage } = Astro.props;
+---
+
+<div>
+  <div
+    class="inline-flex justify-center rounded-lg shadow-md p-2 bg-transparent bg-opacity-90 backdrop-blur-sm"
+  >
+    <img src="/logo.png" alt="Better Parking Logo" class="h-50 w-auto" />
+  </div>
+
+  {
+    announcementDate && announcementMessage && (
+      <div class="flex items-center pl-4 border-l border-gray-200">
+        <p class="text-sm font-semibold text-gray-800">{announcementDate}</p>
+        <p class="text-xs text-gray-600">{announcementMessage}</p>
+      </div>
+    )
+  }
+</div>
