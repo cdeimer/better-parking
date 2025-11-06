@@ -7,16 +7,51 @@ interface Props {
 const { date, description } = Astro.props;
 ---
 
-<a href="#join-us" class="fixed top-4 left-4 z-50">
+<div id="announcement-wrapper" class="fixed top-4 left-4 z-50">
   <div
-    class="bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg p-2 flex items-center max-w-max"
+    class="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg flex items-center max-w-max"
   >
-    <div class="">
-      <span class="text-3xl">🗓️</span>
-    </div>
-    <div class="border-l border-gray-300 ml-1 px-2">
-      <p class="font-bold text-gray-900 text-sm">{date}</p>
-      <p class="text-gray-600 text-xs">{description}</p>
-    </div>
+    <a href="#join-us" class="flex items-center py-3 pl-5 pr-6">
+      <div class="pr-3">
+        <span class="text-3xl">🗓️</span>
+      </div>
+      <div class="border-l border-gray-300 pl-3">
+        <p class="font-bold text-gray-900 text-sm">{date}</p>
+        <p class="text-gray-600 text-xs">{description}</p>
+      </div>
+    </a>
+    <button
+      id="dismiss-announcement"
+      class="absolute top-1 right-1 w-6 h-6 bg-gray-200/50 rounded-full flex items-center justify-center text-gray-600 hover:bg-gray-300/70 hover:text-gray-800 transition-colors"
+      aria-label="Dismiss announcement"
+    >
+      <svg
+        class="w-4 h-4"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="2"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
   </div>
-</a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const wrapper = document.getElementById("announcement-wrapper");
+    const dismissButton = document.getElementById("dismiss-announcement");
+
+    if (wrapper && dismissButton) {
+      dismissButton.addEventListener("click", (e) => {
+        e.preventDefault();
+        wrapper.style.display = "none";
+      });
+    }
+  });
+</script>
