@@ -1,42 +1,3 @@
----
-const resources = [
-  {
-    title: "Henry Santana: Why We Need to End Parking Minimums",
-    description:
-      "A deep dive on how parking requirements impact the housing crisis in Boston.",
-    type: "article",
-    url: "https://mailchi.mp/boston/2025-12-parking-minimums/",
-    iconPath: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-  },
-  {
-    title: "Vox: The High Cost of Free Parking",
-    description:
-      "A video breaking down the impact free parking has on cities and the research of Donald Shoup.",
-    type: "video",
-    url: "https://www.youtube.com/watch?v=Akm7ik-H_7U",
-    iconPath:
-      "M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-  },
-  {
-    title: "Planetizen: Parking Reform Can Boost Homebuilding 40 to 70 Percent",
-    description:
-      "An article examining the evidence that parking flexibility is key to housing abundance.",
-    type: "article",
-    url: "https://www.planetizen.com/news/2024/12/133177-parking-reform-can-boost-homebuilding-40-70-percent",
-    iconPath: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-  },
-  {
-    title:
-      "Sightline Institute: Parking Reform Legalized Most of the New Homes in Buffalo and Seattle",
-    description:
-      "A case study on how changing parking policies led to increased housing development in two U.S. cities.",
-    type: "article",
-    url: "https://www.sightline.org/2023/04/13/parking-reform-legalized-most-of-the-new-homes-in-buffalo-and-seattle",
-    iconPath: "M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
-  },
-];
----
-
 <section id="problem" class="bg-white">
   <div class="container mx-auto py-16 md:py-24 px-4">
     <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">
@@ -137,55 +98,6 @@ const resources = [
           streets. They make it hard to start or expand small businesses,
           hurting our neighborhood fabric.
         </p>
-      </div>
-    </div>
-
-    <!-- Resources Section -->
-    <div class="mt-20 pt-16 border-t border-gray-200">
-      <h3 class="text-2xl md:text-3xl font-bold text-center mb-12">
-        Learn More
-      </h3>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-6">
-        {
-          resources.map((resource) => (
-            <a
-              href={resource.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="bg-gray-50 hover:bg-gray-100 p-6 rounded-lg shadow-sm hover:shadow-md transition-all duration-200 hover:scale-105 cursor-pointer block"
-            >
-              <div class="mb-4">
-                <div class="inline-block p-2 bg-indigo-100 rounded-lg">
-                  <svg
-                    class="w-6 h-6 text-indigo-600"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="1.5"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      d={resource.iconPath}
-                    />
-                  </svg>
-                </div>
-                <span class="inline-block ml-3 text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-1 rounded">
-                  {resource.type === "article" && "Article"}
-                  {resource.type === "video" && "Video"}
-                  {resource.type === "book" && "Book"}
-                  {resource.type === "website" && "Website"}
-                </span>
-              </div>
-              <h4 class="text-lg font-bold text-gray-900 mb-2">
-                {resource.title}
-              </h4>
-              <p class="text-gray-600 text-sm">{resource.description}</p>
-            </a>
-          ))
-        }
       </div>
     </div>
   </div>
