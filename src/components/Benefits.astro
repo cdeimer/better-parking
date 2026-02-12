@@ -19,11 +19,11 @@ const resources = [
       "M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
   },
   {
-    title: "Planetizen: Parking Reform Can Boost Homebuilding 40 to 70 Percent",
+    title: "MAPC: Metro Boston Perfect Fit Parking Initiative",
     description:
-      "An article examining the evidence that parking flexibility is key to housing abundance.",
-    type: "article",
-    url: "https://www.planetizen.com/news/2024/12/133177-parking-reform-can-boost-homebuilding-40-70-percent",
+      "An report examining the evidence that parking is overbuilt in new housing developments.",
+    type: "report",
+    url: "https://perfectfitparking.mapc.org/assets/documents/Final%20Perfect%20Fit%20Report.pdf",
     iconPath:
       "M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8l-6-6z M14 2v6h6 M10 9h4 M10 13h4 M10 17h4",
   },
@@ -181,6 +181,7 @@ const resources = [
                   {resource.type === "video" && "Video"}
                   {resource.type === "book" && "Book"}
                   {resource.type === "website" && "Website"}
+                  {resource.type === "report" && "Report"}
                 </span>
               </div>
               <h4 class="text-lg font-bold text-gray-900 mb-2">
