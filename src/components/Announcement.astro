@@ -2,9 +2,10 @@
 interface Props {
   date: string;
   description: string;
+  link: string;
 }
 
-const { date, description } = Astro.props;
+const { date, description, link } = Astro.props;
 ---
 
 <div id="announcement-wrapper" class="fixed top-4 left-4 z-50">
@@ -12,7 +13,7 @@ const { date, description } = Astro.props;
     class="relative bg-white/80 backdrop-blur-sm rounded-2xl shadow-lg flex items-center max-w-max"
   >
     <a
-      href="https://www.boston.gov/public-notices/16489096"
+      href={link}
       class="flex items-center py-3 pl-5 pr-6"
     >
       <div class="pr-3">
